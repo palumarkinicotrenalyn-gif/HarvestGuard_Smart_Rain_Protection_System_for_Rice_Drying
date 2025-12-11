@@ -11,11 +11,11 @@ const secretPath =
     ? '/etc/secrets/.env'
     : './.env';
 dotenvConfig({ path: secretPath});
-app.use("/device", deviceRouter);
+app.use("/devices", deviceRouter);
 app.get("/", (req, res) =>{
     res.json({message: "Server is working!"})
 });
-app.use("/device", deviceRouter)
+app.use("/devices", deviceRouter)
 app.listen(PORT, ()=>{
     dbConnection();
     console.log("Server started at http://localhost:"+PORT);

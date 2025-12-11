@@ -23,10 +23,10 @@ export const getDevices = async(req, res) =>{
 
   try{
  const devices = await Device.find({});
-        if(devices) {
+        if(!devices) {
             res.status(500).json({success:false,message: "No device found!"});
             }else{
-                  res.status(200).json({success:true,data: "devices"});
+                  res.status(200).json({success:true,data: devices});
             }
 
 } catch(error){
