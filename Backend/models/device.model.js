@@ -8,7 +8,28 @@ const DeviceSchema = new mongoose.Schema ({
 isOnline:{
     type: Boolean,
     default: false,
+ },
+isRaining:{
+    type: Boolean,
+    required: true,
+    default: false
 },
+isSunny:{
+    type: Boolean,
+    required: true,
+    default: false
+},
+temperature:{
+    type: Number,
+    required: true,
+    default: 0
+},
+humidity:{
+    type: Number,
+    required: true,
+    default: 0
+},
+
 lastUpdate:{
     type: Number,
     required: true,
